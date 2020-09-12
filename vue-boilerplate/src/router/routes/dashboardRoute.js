@@ -16,7 +16,7 @@ const dashboardRoute = [
         component: loadDashboard('main'),
     },
     {
-        path: '/zoom/:id/:pwd',
+        path: '/zoom/:id/:pwd/:zoomdata',
         name: 'Zoom Data',
         meta: {
           requiresAuth: true,

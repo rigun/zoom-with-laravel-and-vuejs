@@ -1,6 +1,7 @@
 import {
     postData,
-    getData
+    getData,
+    destroyData
 } from '@/store/config/method'
 const initialState = () => ({
     basicUrl: 'manage-meeting',
@@ -22,6 +23,16 @@ const actions = {
     }, {url = '', data}) {
         try {
             var response = await postData(state.basicUrl+url,data);
+            commit('SET_RESPONSE', response.data);
+        } catch (_) {
+            commit('SET_FAILED')
+        }
+    },
+    async delete({
+        commit, state
+    }, {url = ''}) {
+        try {
+            var response = await destroyData(state.basicUrl+url);
             commit('SET_RESPONSE', response.data);
         } catch (_) {
             commit('SET_FAILED')

@@ -24,7 +24,7 @@
                     <td data-label="ID">{{item.meetingId}}</td>
                     <td data-label="Password">{{item.meetingPwd}}</td>
                     <td data-label="Action">
-                        <button class="r-button r-success-btn r-md-size" @click.prevent="$router.push({name: 'Zoom Data', params: {id: item.meetingId, pwd: item.meetingPwd}})">
+                        <button class="r-button r-success-btn r-md-size" @click.prevent="$router.push({name: 'Zoom Data', params: {id: item.meetingId, pwd: item.meetingPwd,zoomdata: item.id}})">
                             Join Meeting
                         </button>
                     </td>
@@ -34,10 +34,14 @@
     </div>
 </template>
 <script>
+
 import {regex} from '@/components/helper/regex'
+
 export default {
-    mounted(){
+    async mounted(){
+        await this.$store.restored
         this.getData()
+        localStorage.setItem('name',this.$store.getters['auth/getName'])
     },
     data:()=>({
         email: null,

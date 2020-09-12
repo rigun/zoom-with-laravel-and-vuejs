@@ -34,7 +34,6 @@ export default {
   position: fixed;
   right: 0px;
   top: 0px;
-  z-index: 1000;
   height: 80px;
   box-shadow: inset 0px -1px 0px #E6E6E6;
   .r-backarrow{

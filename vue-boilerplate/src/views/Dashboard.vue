@@ -3,7 +3,7 @@
     <r-sidebar v-if="$store.getters['getisLoggedIn']" />
     <r-navbar v-if="$store.getters['getisLoggedIn']" />
     <main :class="$store.getters['getisLoggedIn'] ? !collapse ? 'r-content' : 'r-content r-move-container' : 'r-content-fullwidth'">
-      <div class="r-container" >
+     <div class="r-container" >
         <router-view />
       </div>
     </main>

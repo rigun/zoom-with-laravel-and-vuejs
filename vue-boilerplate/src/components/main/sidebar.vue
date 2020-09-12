@@ -112,7 +112,6 @@ export default {
                 }
             }else{
                 this.accordion = name
-                this.$store.commit('SET_ACTIVETAB', name)
                 this.$store.commit('RESET_COLLAPSE')
                 this.$router.push(link)
             }
@@ -176,7 +175,6 @@ export default {
 }
 
 #Sidebar{
-    z-index: 100;
     color: white;
     position: fixed;
     bottom: 0px;
