@@ -70,10 +70,14 @@ class MeetingController extends Controller
         // ];
     }
     public function getZoomData(){
-        $item = ZoomData::get();
+        $item = ZoomData::orderby('created_at','desc')->get();
         return $this->responseJson('Success',1,$item);
     }
-
+    public function destroy($id){
+        $item = ZoomData::findOrFail($id);
+        $item->delete();
+        return $this->responseJson('Success',1);
+    }
     public function get(Request $request, string $id)
     {
         $path = 'meetings/' . $id;

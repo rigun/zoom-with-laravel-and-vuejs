@@ -51,6 +51,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('/meetings', 'Zoom\MeetingController@list');
     
     Route::get('/manage-meeting/zoomdata', 'Zoom\MeetingController@getZoomData');
+    Route::delete('/manage-meeting/zoomdata/{id}', 'Zoom\MeetingController@destroy');
     Route::post('/manage-meeting/meetings', 'Zoom\MeetingController@create');
     // Create meeting room using topic, agenda, start_time.
 
