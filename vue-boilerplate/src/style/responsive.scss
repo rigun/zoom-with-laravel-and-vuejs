@@ -1,0 +1,159 @@
+@media screen and (min-width: 800px) {
+    //   Desktop
+    .r-table{
+
+        tr{
+            height: 40px;
+            .r-table-firstColumn{
+                width: 30px;
+            }
+            .r-table-actionColumn{
+                width: 60px;
+            }
+        }
+    }
+    
+    .r-table table caption{
+        display: none;
+      }
+    .r-table .r-table-pagination {
+        padding: 40px;
+        
+    }
+    #Sidebar{
+        min-width: 230px;
+        max-width: 230px;
+    }
+    .r-content .r-container {
+        padding: 20px;
+    }
+    .r-hide-sidebar{
+        min-width: 0px !important;
+        max-width: 0px !important;
+    }
+    .r-hide-sidebarHeader{
+        padding: 0px 4px !important;
+    }
+}
+@media screen and (max-width: 800px) {
+    //   Mobile
+    .r-table{
+
+        table {
+          border: 0;
+        }
+      
+        table caption {
+          font-size: 1.3em;
+        }
+        .showThead{
+          height: auto !important;
+        }
+        .hideThead{
+          height: 0px;
+          transition: all 0.5s ease
+        }
+        table thead tr {
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+          padding: 0px 16px;
+          overflow: hidden;
+          th{
+              width: 100%;
+              min-height: 32px;
+              .y-center-flex{
+                  width: 100%;
+                  min-height: 32px;
+                  img{
+                      margin-left: auto;
+                  }
+              }
+          }
+          .r-table-firstColumn, .r-table-unsortable{
+              display: none;
+          }
+          .r-table-actionColumn{
+              display: none;
+          }
+        }
+        
+        table tr {
+          border-bottom: 15px solid #f6f6f6;
+          display: block;
+          margin-bottom: .625em;
+          height: 100%;
+        }
+        tr{
+          .r-table-firstColumn{
+              width: auto;
+          }
+          .r-table-actionColumn{
+              width: auto;
+          }
+      }
+        table td {
+          border-bottom: 1px solid #ddd;
+          display: flex;
+          align-items: center;
+          font-size: 12px;
+          text-align: right;
+          min-height: 32px;
+        }
+        
+        table td::before {
+          /*
+          * aria-label has no advantage, it won't be read inside a table
+          content: attr(aria-label);
+          */
+          content: attr(data-label);
+          float: left;
+          font-weight: bold;
+          text-transform: uppercase;
+          margin-right: auto;
+          text-align: left;
+          padding-right: 10px;
+          max-width: 100px;
+          min-width: 100px;
+        }
+        
+        table td:last-child {
+          border-bottom: 0;
+        }
+    }
+  .r-table .r-table-pagination {
+      padding: 16px;
+  }
+    .r-hide-sidebar{
+        min-width: 230px !important;
+        max-width: 230px !important;
+    }
+    .r-hide-sidebarHeader{
+        padding: 0px 20px !important;
+    }
+    .r-content .r-container {
+        padding: 16px;
+    }
+    .r-content, #Navbar, #Footer {
+        width: 100% !important;
+        padding-left: 0px !important;
+    }
+    .r-content, #Navbar, #Footer {
+        width: 100% !important;
+        padding-left: 0px !important;
+    }
+    #Sidebar{
+        min-width: 0px;
+        max-width: 0px;
+        z-index: 10000;
+        .r-humburger{
+            opacity: 1;
+            cursor: pointer;
+        }
+        .r-sidebarContent{
+            .r-sidebarHeader{
+                padding: 0px 4px;
+            }
+        }
+    }
+}
